@@ -52,9 +52,6 @@
         <li class="nav-item">
           <a class = "nav-link" aria-current = "page" href = "<?php echo $url;?>recursos/cerrar.php">Cerrar sesión</a>
         </li>
-
-
-
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Estudiante" aria-label="Search">
