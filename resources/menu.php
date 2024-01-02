@@ -12,19 +12,6 @@
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profesores
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<?php echo $url;?>profesores/adicionar1.php">Adicionar</a></li>
-            <li><a class="dropdown-item" href="<?php echo $url;?>profesores/eliminar1.php">Eliminar</a></li>
-            <li><a class="dropdown-item" href="<?php echo $url;?>profesores/modificar1.php">Modificar</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="<?php echo $url;?>profesores/listar.php">Listar</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Utilidades
           </a>
           <ul class="dropdown-menu">
@@ -50,7 +37,7 @@
         </li>
 
         <li class="nav-item">
-          <a class = "nav-link" aria-current = "page" href = "<?php echo $url;?>recursos/cerrar.php">Cerrar sesión</a>
+          <a class = "nav-link" aria-current = "page" href = "">Cerrar sesión</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
