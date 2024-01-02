@@ -1,1 +1,1 @@
-germnán
+germná
