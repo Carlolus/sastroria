@@ -15,13 +15,13 @@
             Utilidades
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="">Crear Trabajo de Grado</a></li>
-            <li><a class="dropdown-item" href="">Asignar Estudiante</a></li>
-            <li><a class="dropdown-item" href="">Listar Trabajos</a></li>
+            <li><a class="dropdown-item" href="#">Crear Trabajo de Grado</a></li>
+            <li><a class="dropdown-item" href="#">Asignar Estudiante</a></li>
+            <li><a class="dropdown-item" href="#">Listar Trabajos</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="">Crear Comité de Evaluación</a></li>
-            <li><a class="dropdown-item" href="">Evaluar</a></li>
-            <li><a class="dropdown-item" href="">Listar evaluaciones</a></li>
+            <li><a class="dropdown-item" href="#">Crear Comité de Evaluación</a></li>
+            <li><a class="dropdown-item" href="#">Evaluar</a></li>
+            <li><a class="dropdown-item" href="#">Listar evaluaciones</a></li>
           </ul>
         </li>
 
@@ -37,7 +37,7 @@
         </li>
 
         <li class="nav-item">
-          <a class = "nav-link" aria-current = "page" href = "">Cerrar sesión</a>
+          <a class = "nav-link" aria-current = "page" href = "#">Cerrar sesión</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
