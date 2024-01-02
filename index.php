@@ -6,6 +6,10 @@
     <title>Sastroria</title>
 </head>
 <body>
-    
+    <div class="row">
+        <form action="">
+            <label for="" class = "control-label">Diego</label>
+        </form>
+    </div>
 </body>
 </html>
