@@ -34,6 +34,7 @@
                 <div class="col">
                 <!-- Simple link -->
                 <a href="#!">Forgot password?</a>
+                <a href="#!">Forgot user?</a>
                 </div>
             </div>
 
