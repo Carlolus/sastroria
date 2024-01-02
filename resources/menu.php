@@ -14,11 +14,9 @@
 <body>
 
     <header class="navbar navbar-expand-lg navbar-light bg-light">
-        <span class="navbar-toggler-icon" id="barra"></span>
 
         <div class="imagenlogo navbar-brand">
-            <img src="img/camisa.jpg" alt="si">
-            <h2 class="logo">Sastreria</h2>
+            <h2 class="logo">Sastreria - Nariño</h2>
         </div>
 
         <nav class="navbar-nav ml-auto">
