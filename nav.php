@@ -27,6 +27,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Servicios</a>
+                    <a class="nav-link" href="#">Servicios</a>
                 </li>
                 <!-- Agrega más elementos de menú según sea necesario -->
             </ul>
