@@ -3,7 +3,6 @@
 <head>
     <?php include("../resources/header.php"); ?>
 </head>
-
 <body>
     <div class="container">
         <?php include("../resources/menu.php"); ?>
@@ -13,5 +12,4 @@
         crossorigin="anonymous"></script>
 
     </body>
-
 </html>
