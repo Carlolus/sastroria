@@ -60,12 +60,32 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Ayuda</a></li>
                     </ul>
-                    
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="d-inline-block text-nowrap">
-                            <img src="<?php echo  $_SESSION['xpfp']; ?>" alt="Imagen de Usuario" style="width: 20px; height: 20px; border-radius: 50%;">
+                            <img src="
+                                <?php
+                                    include("connect.php");
+                                    $db = conectar();
+
+                                    $sql = "SELECT image FROM users WHERE login = '" . $_SESSION['xlog'] . "'";
+                                    $result = mysqli_query($db, $sql);
+
+                                    if ($result) {
+                                        $arr = mysqli_fetch_assoc($result);
+                                        if ($arr['image'] == null || $arr['image'] == "") {
+                                            echo "images/pfp/pfp_admin.png";
+                                        } else {
+                                            echo $arr['image'];
+                                        }
+                                        mysqli_free_result($result);
+                                    } else {
+                                        echo "Error en la consulta: " . mysqli_error($db);
+                                    }                               
+                                    mysqli_close($db);
+                                ?>" 
+                                alt="Imagen de Usuario" style="width: 20px; height: 20px; border-radius: 50%;">
                         </span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
