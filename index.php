@@ -5,42 +5,51 @@
 </head>
 <body>
     <?php include("resources/menu.php"); ?>
-    <div class="container">
-        <div class="row">
-            <div class="col p-4 d-flex align-items-start justify-content-center flex-column">
-                <h1>Sistema de administración Sastreria</h1>
-                <hr>
-                <h4>Ingenieria de sistemas &copy;</h4>
-                <i>2024</i>
-            </div>
-            <div class="col p-4">
-                <div class="card shadow-sm" style="max-width: 46rem;">
-                    <img src="./images/candado.jpg" class="card-img-top" alt="candado">
-                    <div class="card-body">
-                        <h4 class="card-title">Inicio de sesión</h4>
-                        <form action="recursos/verificar.php" method="post">
-                            <label class="form-label">Login</label>
-                            <input type="text" required name="txtlog" maxlenght="50" class="form-control">
-
-                            <label class="form-label">Clave</label>
-                            <input type="password" required name="txtpass" maxlenght="50" class="form-control">
-                            <br>
-                            <input type="submit" value="Acceder" class="btn btn-primary">
-                            <br>
-                            <?php
-                            if (isset($_REQUEST["msg"])) {    //si existe algo, si esta asignado, si la variable esta creada o existe
-                                $x = $_REQUEST["msg"];
-                                if ($x == 1) echo "<h4 class='text-danger'>Usuario no ENCONTRADO</h4>";
-                                else echo "<h4 class='text-danger'>Acceso no autorizado!!</h4>";
-                            }
-                            ?>
-                        </form>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="info text-center">
+                    <h1>¡Bienvenid@ a</h1>
+                    <h1> Sastrería Sur!</h1>
+                    <br>    
+                    <div class="info">
+                        <div class="candidatos">
+                            <div class="content">
+                                <span><ion-icon name="create-outline"></ion-icon>  Explora las funciones intuitivas de nuestro software para gestionar de manera eficiente tus usuarios y proyectos.</span> <br>
+                                <span><ion-icon name="accessibility-outline"></ion-icon>   Ajusta patrones y experimenta con estilos únicos. La confección nunca fue tan precisa y emocionante.</span><br>
+                                <span><ion-icon name="newspaper-outline"></ion-icon> Administra tus servicios de alquiler de manera eficiente con nuestra plataforma.</span>
+                                <!-- <span><ion-icon name="refresh-outline"></ion-icon>  Mantén actusadddddddddddddalizado tu CV</span> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            <div class="col-md-6">
+                <div id="registro" class="text-center p-4 border" style="background-color: #212529; color: white; Border-radius: 15px">
+                    <h2>Inicio de Sesión</h2>
+                    <br>
+                    <form>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label text-white">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contraseña" class="form-label text-white">Contraseña</label>
+                            <input type="password" class="form-control" id="contraseña" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark btn-block">Iniciar Sesión</button>
+                    </form>
+                    <br>
+                    <a href="#" class="mt-2 text-white">Crear cuenta</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-</body>        
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
 </html>
