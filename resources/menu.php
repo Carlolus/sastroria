@@ -70,7 +70,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#">Configuración</a></li>
-                        <li><a class="dropdown-item" href="#">Cerrar</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>resources/close.php">Cerrar</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Ayuda</a></li>
                     </ul>
