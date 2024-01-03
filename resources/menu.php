@@ -10,7 +10,7 @@
     <div class="container-fluid">
         <div class="d-flex align-items-center">
             <a class="navbar-brand" href="#">Sastrería Sur</a>
-            <span><img src="images/icons/señora.png" alt="hola" style="width: 30px; height: auto;"></span>
+            <span><img src="/sAstroria/images/icons/señora.png" alt="hola" style="width: 30px; height: auto;"></span>
         </div>
 
 
@@ -75,7 +75,7 @@
                                     if ($result) {
                                         $arr = mysqli_fetch_assoc($result);
                                         if ($arr['image'] == null || $arr['image'] == "") {
-                                            echo "images/pfp/pfp_admin.png";
+                                            echo "/sAstroria/images/pfp/pfp_admin.png";
                                         } else {
                                             echo $arr['image'];
                                         }

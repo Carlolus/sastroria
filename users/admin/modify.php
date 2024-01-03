@@ -7,7 +7,7 @@
     <?php include("../../resources/menu.php"); ?>
     <div class="container mt-5">
         <h1 class="mb-4">Actualizar Información</h1>
-        <form action="procesar_actualizacion.php" method="post" enctype="multipart/form-data">
+        <form action="procesar_actualizacion.php" method="post">
             <!-- Clave de acceso -->
             <div class="form-group">
                 <label for="clave">Clave de acceso:</label>
