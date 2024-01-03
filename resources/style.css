@@ -1,0 +1,18 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.info{
+    position: relative;
+    line-height: 1.5;
+    overflow: hidden; 
+}
+.info .content{
+    display: grid;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.info .candidatos h2{
+    color: #162938;
+    font-size: 30px;
+}
