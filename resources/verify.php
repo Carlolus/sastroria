@@ -2,8 +2,8 @@
     session_start(); //acceso a las variables de sesion
     include("connect.php");
     $db = conectar();
-    $log = $_REQUEST["txtlog"];
-    $pass = $_REQUEST["txtpass"];
+    $log = $_REQUEST["login"];
+    $pass = $_REQUEST["password"];
 
     $sql = "SELECT * FROM users WHERE login = '$log' and clave = md5('$pass')"; // la funcion md5 encripa la clase
 

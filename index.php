@@ -29,14 +29,14 @@
                 <div id="registro" class="text-center p-4 border" style="background-color: #212529; color: white; Border-radius: 15px">
                     <h2>Inicio de Sesión</h2>
                     <br>
-                    <form>
+                    <form action = "resources/verify.php" method = "post">
                         <div class="mb-3">
-                            <label for="correo" class="form-label text-white">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="correo" required>
+                            <label for="correo" class="form-label text-white">Usuario</label>
+                            <input type="text" class="form-control" id="login" required>
                         </div>
                         <div class="mb-3">
                             <label for="contraseña" class="form-label text-white">Contraseña</label>
-                            <input type="password" class="form-control" id="contraseña" required>
+                            <input type="password" class="form-control" id="password" required>
                         </div>
                         <button type="submit" class="btn btn-dark btn-block">Iniciar Sesión</button>
                         <?php
