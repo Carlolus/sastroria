@@ -20,7 +20,6 @@
         $_SESSION["xname"]=$arr[2];
         $_SESSION["xpfp"]=$arr[3];
         header("location: ../main.php");
-        //echo "Bienvenido $arr[2]";
     }
     mysqli_close($db);
 
