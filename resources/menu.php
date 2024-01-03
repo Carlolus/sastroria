@@ -17,7 +17,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -55,7 +55,7 @@
                         Reportes
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"> Generar Factura de pago</a></li>
+                        <li><a class="dropdown-item" href="#">Generar Factura de pago</a></li>
                         <li><a class="dropdown-item" href="#">Servicios pendientes</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Ayuda</a></li>
@@ -68,7 +68,7 @@
                             <img src="images\icons\señora.png" alt="Imagen de Usuario" style="width: 20px; height: 20px; border-radius: 50%;">
                         </span>
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#">Configuración</a></li>
                         <li><a class="dropdown-item" href="#">Cerrar</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -77,6 +77,5 @@
                 </li>           
             </ul>
         </div>
-
     </div>
 </nav>
