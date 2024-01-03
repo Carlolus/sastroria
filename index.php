@@ -24,6 +24,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
             <div class="col-md-6">
                 <div id="registro" class="text-center p-4 border" style="background-color: #212529; color: white; Border-radius: 15px">
