@@ -13,7 +13,7 @@
 
     if ($c == 0){
         //echo "Usuario no existe";
-        header("location: ../index.php?msg=1");
+        header("location: ../index.php");
     }
     else{
         $arr = mysqli_fetch_array($datos);

@@ -1,8 +1,13 @@
+<?php
+    session_start();
+    $url = "http://localhost/sAstroria/";
+    if (!isset($_SESSION["xlog"])) {   //si no esta creada la variable de sesion
+    header("Location: ../index.php");
+}
+?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-
-        
         <div class="d-flex align-items-center">
             <a class="navbar-brand" href="#">Sastrería Sur</a>
             <span><img src="images/icons/señora.png" alt="hola" style="width: 30px; height: auto;"></span>
