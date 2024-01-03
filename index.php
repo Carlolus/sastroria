@@ -40,6 +40,13 @@
                             <input type="password" class="form-control" id="contraseña" required>
                         </div>
                         <button type="submit" class="btn btn-dark btn-block">Iniciar Sesión</button>
+                        <?php
+                            if (isset($_REQUEST["msg"])) {    //si existe algo, si esta asignado, si la variable esta creada o existe
+                                $x = $_REQUEST["msg"];
+                                if ($x == 1) echo "<h4 class='text-danger'>Usuario no ENCONTRADO</h4>";
+                                else echo "<h4 class='text-danger'>Acceso no autorizado!!</h4>";
+                            }
+                        ?>
                     </form>
                     <br>
                     <a href="#" class="mt-2 text-white">Crear cuenta</a>
