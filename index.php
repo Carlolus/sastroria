@@ -32,11 +32,11 @@
                     <form action = "resources/verify.php" method = "post">
                         <div class="mb-3">
                             <label for="correo" class="form-label text-white">Usuario</label>
-                            <input type="text" class="form-control" id="login" required>
+                            <input type="text" class="form-control" id="login" name = "login"required>
                         </div>
                         <div class="mb-3">
                             <label for="contraseña" class="form-label text-white">Contraseña</label>
-                            <input type="password" class="form-control" id="password" required>
+                            <input type="password" class="form-control" id="password" name = "password" required>
                         </div>
                         <button type="submit" class="btn btn-dark btn-block">Iniciar Sesión</button>
                         <?php
