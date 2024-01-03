@@ -16,3 +16,7 @@ body{
     color: #162938;
     font-size: 30px;
 }
+/* supuestamente para desaparecer la linea por defecto que trae el dropdown */
+.navbar-toggler-icon {
+    display: none;
+}
