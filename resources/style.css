@@ -1,5 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: aliceblue;
 }
 .info{
     position: relative;
@@ -8,8 +9,7 @@ body{
 }
 .info .content{
     display: grid;
-    margin-left: 10px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .info .candidatos h2{
