@@ -65,7 +65,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="d-inline-block text-nowrap">
-                            <img src="images\icons\señora.png" alt="Imagen de Usuario" style="width: 20px; height: 20px; border-radius: 50%;">
+                            <img src="<?php echo  $_SESSION['xpfp']; ?>" alt="Imagen de Usuario" style="width: 20px; height: 20px; border-radius: 50%;">
                         </span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
