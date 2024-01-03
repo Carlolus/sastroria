@@ -4,7 +4,6 @@
     <?php include("resources/header.php"); ?>
 </head>
 <body>
-    <?php include("resources/menu.php"); ?>
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
         <div class="row justify-content-center">
             <div class="col-md-6">
