@@ -7,7 +7,7 @@
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <div class="info text-center">
+                <div class="info text-justify">
                     <h1>¡Bienvenid@ a</h1>
                     <h1> Sastrería Sur!</h1>
                     <br>    
