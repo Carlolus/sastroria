@@ -62,9 +62,19 @@
                     </ul>
                     
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Cerrar sesión</a>
-                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="d-inline-block text-nowrap">
+                            <img src="images\icons\señora.png" alt="Imagen de Usuario" style="width: 20px; height: 20px; border-radius: 50%;">
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Configuración</a></li>
+                        <li><a class="dropdown-item" href="#">Cerrar</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                    </ul>
+                </li>           
             </ul>
         </div>
 
