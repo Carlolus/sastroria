@@ -1,5 +1,5 @@
 <?php
-    $nom = $_REQUEST['nombre'];
+    $nom = $_REQUEST['name'];
     echo $nom;
     $dir = $_REQUEST['imgdir'];
     echo $dir;
