@@ -61,7 +61,7 @@
 
             <div class="form-group">
                 <label for="profile-image">
-                    <img src="./usuario.png" alt="Profile Image" id="profile-image-preview" style="max-width: 100%; height: auto;">
+                    <img src="/sAstroria/images/pfp/usuario.png" alt="Profile Image" id="profile-image-preview" style="max-width: 100%; height: auto;">
                 </label>
             </div>
             <div class="form-group">
