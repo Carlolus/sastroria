@@ -31,55 +31,55 @@
             } else {
                 echo "Error en la consulta: " . mysqli_error($db);
             }
-
             echo <<<HTML
-                <div class="col-md-6">
-                    <form action="procesar_actualizacion.php" method="post">
+                <form action="procesar_actualizacion.php" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
                         <!-- Clave de acceso -->
-                        <div class="form-group">
-                            <label for="clave">Clave de acceso:</label>
-                            <input type="text" class="form-control" name="login" id="clave" value='$login' required>
+                            <div class="form-group">
+                                <label for="clave">Clave de acceso:</label>
+                                <input type="text" class="form-control" name="login" id="clave" value='$login' required>
+                            </div>
+                            <br>
+                            <!-- Contraseña -->
+                            <div class="form-group">
+                                <label for="contrasena">Nueva Contraseña:</label>
+                                <input type="password" class="form-control" name="password" id="contrasena" required>
+                            </div>
+                            <br>
+                            <!-- Nombre -->
+                            <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" class="form-control" name="name" id="nombre" value='$name' required>
+                            </div>
+                            <br>
+                            <!-- Número de teléfono -->
+                            <div class="form-group">
+                                <label for="telefono">Número de teléfono:</label>
+                                <input type="tel" class="form-control" value = '$phone'name="phone" id="telefono" pattern="[0-9]{10}" required>
+                                <small class="form-text text-muted">Formato: 1234567890</small>
+                            </div>
+                            <br>
                         </div>
-                        <br>
-                        <!-- Contraseña -->
-                        <div class="form-group">
-                            <label for="contrasena">Nueva Contraseña:</label>
-                            <input type="password" class="form-control" name="password" id="contrasena" required>
-                        </div>
-                        <br>
-                        <!-- Nombre -->
-                        <div class="form-group">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" class="form-control" name="name" id="nombre" value='$name' required>
-                        </div>
-                        <br>
-                        <!-- Número de teléfono -->
-                        <div class="form-group">
-                            <label for="telefono">Número de teléfono:</label>
-                            <input type="tel" class="form-control" value = '$phone'name="phone" id="telefono" pattern="[0-9]{10}" required>
-                            <small class="form-text text-muted">Formato: 1234567890</small>
-                        </div>
-                        <br>
-                        <button type="submit" class="btn btn-dark btn-block">Actualizar</button>
-                    </form>
-                </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="imagen">Seleccionar nueva imagen:</label>
+                            </div>
 
-                <div class="col-md-6">
-                    <form action="procesar_cambio_imagen.php" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="imagen">Seleccionar nueva imagen:</label>
+                            <div class="form-group">
+                                <label for="profile-image">
+                                    <img src='$image' name="imgdir" alt="Profile Image" id="profile-image-preview" style="max-width: 100%; height: auto;">
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" id="profile-image" name="profile-image">
+                            </div>           
                         </div>
-
-                        <div class="form-group">
-                            <label for="profile-image">
-                                <img src='$image' name="imgdir" alt="Profile Image" id="profile-image-preview" style="max-width: 100%; height: auto;">
-                            </label>
+                        <div class="col-md-12"> 
+                            <button type="submit" action="updateInfo.php" class="btn btn-dark btn-block">Actualizar</button>
                         </div>
-                        <div class="form-group">
-                            <input type="file" id="profile-image" name="profile-image">
-                        </div>
-                    </form>
-                </div>
+                    </div>    
+                </form>   
             HTML;  
                 mysqli_close($db);
             ?>
