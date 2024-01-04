@@ -1,12 +1,14 @@
-// Actualizar la ruta de la imagen de previsualización
-document.querySelector("#profile-image-preview").addEventListener("change", (e) => {
-    // Obtener la ruta de la nueva imagen
-    const newImagePath = e.target.files[0].path;
-  
-    // Actualizar la ruta de la imagen de previsualización
-    document.querySelector("#profile-image-preview").src = newImagePath;
-    console.log(newImagePath)
-    console.log("hola")
-});
+// Obtener el elemento de imagen de previsualización
+const imagePreview = document.querySelector("#profile-image-preview");
 
-console.log("asdfdsa")
+// Obtener el elemento de entrada de archivo
+const inputFile = document.querySelector("#profile-image");
+
+// Agregar un evento de cambio al elemento de entrada de archivo
+inputFile.addEventListener("change", (e) => {
+  // Obtener el archivo seleccionado
+  const selectedFile = e.target.files[0];
+
+  // Mostrar la imagen seleccionada en la imagen de previsualización
+  imagePreview.src = URL.createObjectURL(selectedFile);
+});
