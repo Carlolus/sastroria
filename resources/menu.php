@@ -32,7 +32,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Añadir</a></li>
-                        <li><a class="dropdown-item" href="#">Modificar</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>users/customers/list_customers.php">Listar</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Eliminar</a></li>
                     </ul>
