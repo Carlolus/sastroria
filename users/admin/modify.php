@@ -79,11 +79,7 @@
                             <button type="submit" action="updateInfo.php" class="btn btn-dark btn-block">Actualizar</button>
                         </div>
                     </div>    
-                </form>
-                        
-                
-
-                
+                </form>   
             HTML;  
                 mysqli_close($db);
             ?>
