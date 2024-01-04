@@ -4,6 +4,20 @@
     <?php include("resources/header.php"); ?>
 </head>
 <body>
+
+<!--fondo login-->
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-image: url(images/icons/19366.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0; 
+        padding: 0; 
+    }
+</style>
+
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -29,7 +43,7 @@
                 <div id="registro" class="text-center p-4 border" style="background-color: #212529; color: white; Border-radius: 15px">
                     <h2>Inicio de Sesión</h2>
                     <br>
-                    <form action = "resources/verify.php" method = "post">
+                    <form action = "resources/verify.php?login=<?php echo $_REQUEST['login'];?>" method = "post">
                         <div class="mb-3">
                             <label for="correo" class="form-label text-white">Usuario</label>
                             <input type="text" class="form-control" id="login" name = "login"required>
@@ -48,7 +62,7 @@
                         ?>
                     </form>
                     <br>
-                    <a href="#" class="mt-2 text-white">Crear cuenta</a>
+                    <!-- <a href="#" class="mt-2 text-white">Crear cuenta</a> -->
                 </div>
             </div>
         </div>

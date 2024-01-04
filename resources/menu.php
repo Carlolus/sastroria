@@ -9,7 +9,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <div class="d-flex align-items-center">
-            <a class="navbar-brand" href="#">Sastrería Sur</a>
+            <a class="navbar-brand" href="<?php echo $url; ?>main.php">Sastrería Sur</a>
             <span><img src="/sAstroria/images/icons/señora.png" alt="hola" style="width: 30px; height: auto;"></span>
         </div>
 
