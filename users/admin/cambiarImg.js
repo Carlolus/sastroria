@@ -78,3 +78,30 @@ guardarButtonF.addEventListener("submit", function(evt) {
   })
   .catch(err => alert(err));
 });
+
+
+const actualizarDataB = document.getElementById("frmDataChange");
+actualizarDataB.addEventListener("submit", function(evt) {
+  evt.preventDefault();
+
+  let div1 = document.getElementById("divModal");
+
+  // Obtener los datos del formulario
+  const formData = new FormData(frmDataChange); // 'this' se refiere al formulario actual
+
+  // Llamado asincrónico con datos del formulario
+  fetch("dataChange.php", {
+      method: 'post',
+      body: formData,
+  })
+  .then(response => response.text())
+  .then(data => {
+      //location.reload();
+      div1.innerHTML = data;
+      const MyModal = new bootstrap.Modal('#Modal1', {
+          keyboard: false
+      });
+      MyModal.show();
+  })
+  .catch(err => alert(err));
+});

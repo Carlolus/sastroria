@@ -21,6 +21,14 @@
             transform: translateY(-50%);
             cursor: pointer;
         }
+
+        #profile-image-preview {
+            max-width: 100%;
+            height: auto; 
+            max-height: 200px;
+            display: block; 
+            margin-top: 10px; 
+        }
     }
     </style>
     
@@ -44,7 +52,7 @@
                 echo "Error en la consulta: " . mysqli_error($db);
             }
             echo <<<HTML
-                <form action="procesar_actualizacion.php" method="post">
+                <form action="dataChange.php.php" method="post" id = "frmDataChange">
                     <div class="row">
                         <div class="col-md-6">
                         <!-- Clave de acceso -->
@@ -67,6 +75,7 @@
                             </div>
                             <br>
                         </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="imagen">Seleccionar nueva imagen:</label>
@@ -80,8 +89,9 @@
                                 <input type="file" id="profile-image" name="profile-image">
                             </div>           
                         </div>
+        
                         <div class="col-md-12"> 
-                            <button type="submit" action="updateInfo.php" class="btn btn-dark btn-block">Actualizar</button>
+                            <button type="submit" class="btn btn-dark btn-block">Actualizar</button>
                             <input type="button" class = "btn btn-tertiary" id = "btnChangePass" value="Cambiar Contraseña">
                         </div>
                     </div>    
