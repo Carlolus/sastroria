@@ -7,9 +7,8 @@
     <?php include('../../resources/menu.php');
         include('../../resources/conect.php');
 
-        conectar();
+        $db = conectar();
 
-        $sql = mysql_query("SELECT * FROM users where login=''");
     ?>
 
     <style>
