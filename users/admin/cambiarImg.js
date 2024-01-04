@@ -55,8 +55,9 @@ function checkPasswordMatch() {
 
 const guardarButtonF = document.getElementById("frmChangePass");
 guardarButtonF.addEventListener("submit", function(evt) {
-    
+  modal.hide();
   evt.preventDefault();
+  
 
   let div1 = document.getElementById("divModal")
 

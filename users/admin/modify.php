@@ -29,7 +29,6 @@
 
         <div class="row">
         <?php
-            //include("../../resources/connect.php");
             $db = conectar();
 
             $sql = "SELECT login, name, image, phone FROM users WHERE login = '" . $_SESSION['xlog'] . "'";
@@ -105,7 +104,7 @@
                             <div class="input-group">
                                 <input type="password" required id="newPassword1" name="newPassword1" class="form-control">
                                 <span class="input-group-text" onclick="togglePassword('newPassword1')">
-                                    <i class="bi bi-eye"></i>
+                                    <i class="bi ci-eye"></i>
                                 </span>
                             </div>
                         </div>
@@ -115,7 +114,7 @@
                             <div class="input-group">
                                 <input type="password" required id="newPassword2" name="newPassword2" class="form-control">
                                 <span class="input-group-text" onclick="togglePassword('newPassword2')">
-                                    <i class="bi bi-eye"></i>
+                                    <i class="bi ci-eye"></i>
                                 </span>
                             </div>
                             <small id="passwordMatchMessage" class="form-text text-muted"></small>
@@ -126,7 +125,7 @@
                             <div class="input-group">
                                 <input type="password" required id="actualPassword" name="actualPassword" class="form-control">
                                 <span class="input-group-text" onclick="togglePassword('actualPassword')">
-                                    <i class="bi bi-eye"></i>
+                                    <i class="bi ci-eye"></i>
                                 </span>
                             </div>
                         </div>
