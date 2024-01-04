@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include("../../resources/header.php");?>
+    <?php include('../../resources/header.php');?>
 </head>
 <body>
-    <?php include("../../resources/menu.php"); ?>
+    <?php include('../../resources/menu.php'); ?>
     <div class="container mt-5">
         <h1 class="mb-4">Actualizar Información</h1>
         <form action="procesar_actualizacion.php" method="post">
