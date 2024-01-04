@@ -5,7 +5,7 @@
 </head>
 <body>
     <?php include('../../resources/menu.php');
-        include('../../resources/conect.php');
+        include('../../resources/connect.php');
 
         $db = conectar();
 
