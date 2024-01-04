@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $url = "http://localhost/sAstroria/";
+    $url = "/sAstroria/";
     if (!isset($_SESSION["xlog"])) {   //si no esta creada la variable de sesion
     header("Location: ../index.php?msg=2");
     }
@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="<?php echo $url; ?>main.php">Inicio</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
