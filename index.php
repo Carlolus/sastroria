@@ -4,6 +4,20 @@
     <?php include("resources/header.php"); ?>
 </head>
 <body>
+
+<!--fondo login-->
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-image: url(images/icons/19366.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0; 
+        padding: 0; 
+    }
+</style>
+
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -48,7 +62,7 @@
                         ?>
                     </form>
                     <br>
-                    <a href="#" class="mt-2 text-white">Crear cuenta</a>
+                    <!-- <a href="#" class="mt-2 text-white">Crear cuenta</a> -->
                 </div>
             </div>
         </div>
