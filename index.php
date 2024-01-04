@@ -43,7 +43,7 @@
                 <div id="registro" class="text-center p-4 border" style="background-color: #212529; color: white; Border-radius: 15px">
                     <h2>Inicio de Sesión</h2>
                     <br>
-                    <form action = "resources/verify.php?login=<?php echo $_REQUEST['login'];?>" method = "post">
+                    <form action = "resources/verify.php" method = "post">
                         <div class="mb-3">
                             <label for="correo" class="form-label text-white">Usuario</label>
                             <input type="text" class="form-control" id="login" name = "login"required>
