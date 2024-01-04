@@ -57,14 +57,16 @@ const guardarButtonF = document.getElementById("frmChangePass");
 guardarButtonF.addEventListener("submit", function(evt) {
   modal.hide();
   evt.preventDefault();
-  
 
-  let div1 = document.getElementById("divModal")
+  let div1 = document.getElementById("divModal");
 
-  //llamado asincrono
+  // Obtener los datos del formulario
+  const formData = new FormData(frmChangePass); // 'this' se refiere al formulario actual
 
-  fetch("passwordChange.php",{
+  // Llamado asincrónico con datos del formulario
+  fetch("passwordChange.php", {
       method: 'post',
+      body: formData,
   })
   .then(response => response.text())
   .then(data => {
@@ -74,5 +76,5 @@ guardarButtonF.addEventListener("submit", function(evt) {
       });
       MyModal.show();
   })
-  .catch(err => alert(err))
-})
+  .catch(err => alert(err));
+});

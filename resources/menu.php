@@ -111,7 +111,7 @@
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick>Aceptar</button>
+        <button type="button" class="btn btn-tertiary" data-bs-dismiss="modal" onclick>Aceptar</button>
        </div>
     </div>
   </div>

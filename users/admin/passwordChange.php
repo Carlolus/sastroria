@@ -18,11 +18,6 @@
             echo "<p>Contraseña actualizada con éxito</p>";
         }
         mysqli_close($db);
-    } else {
-        // Manejar el caso en que las claves no están presentes
-        echo "<h3>Error:</h3>";
-        echo "<p>Parámetros de contraseña no proporcionados correctamente</p>";
-    }   
-    
+    }  
 ?>
 
