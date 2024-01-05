@@ -7,51 +7,51 @@
     <?php include('../../resources/menu.php');?>
     
     <style>
-    body {
-        font-family: 'Roboto', sans-serif;
+        body {
+            font-family: 'Roboto', sans-serif;
 
-        .password-toggle {
-            position: relative;
+            .password-toggle {
+                position: relative;
+            }
+
+            .toggle-btn {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+
+            #profile-image-preview {
+                max-width: 100%;
+                height: auto; 
+                max-height: 200px;
+                display: block; 
+                margin-top: 10px; 
+            }
         }
 
-        .toggle-btn {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        #profile-image-preview {
-            max-width: 100%;
-            height: auto; 
-            max-height: 200px;
-            display: block; 
-            margin-top: 10px; 
-        }
-    }
-
-    
-    #formimg{
-            max-width: 200px;
-            margin: 0 auto;
-            padding: 0px;
-            /* background-color: #162938; */
-            /* border: 2px solid #162938; */
-        }
+        
+        #formimg{
+                max-width: 200px;
+                margin: 0 auto;
+                padding: 0px;
+                /* background-color: #162938; */
+                /* border: 2px solid #162938; */
+            }
 
 
-    img{
-            /* margin-left: 70px; */
-            /* justify-content: center;
-            align-items: center; */
-            height: 10px;
-            width: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #dfdfdf;
-            border: 2px solid #162938;
-        }
+        img{
+                /* margin-left: 70px; */
+                /* justify-content: center;
+                align-items: center; */
+                height: 10px;
+                width: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                background: #dfdfdf;
+                border: 2px solid #162938;
+            }
         
     </style>
     

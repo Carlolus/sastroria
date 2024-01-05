@@ -13,7 +13,7 @@
                 <div class="overflow-hidden card table-nowrap table-card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Listado de clientes</h5>
-                        <a href="#!" class="btn btn-light btn-sm">Añadir Cliente</a>
+                        <a href="create_customer.php" class="btn btn-light btn-sm">Añadir Cliente</a>
                     </div>
                     <div class="table-responsive">
                         <table class="table mb-0">
