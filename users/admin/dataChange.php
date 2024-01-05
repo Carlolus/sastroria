@@ -7,7 +7,8 @@
     $nLogin = $_POST['login'];
     $nName = $_POST['name'];
     $nPhone = $_POST['phone'];
-    $sql = "UPDATE users SET login = '$nLogin', name = '$nName', phone = '$nPhone' WHERE login = '$obj'";
+    $nImage = $_POST['image-url'];
+    $sql = "UPDATE users SET login = '$nLogin', name = '$nName', phone = '$nPhone', image = '$nImage' WHERE login = '$obj'";
     $result = mysqli_query($db, $sql);
 
 
@@ -18,10 +19,8 @@
         if($obj != $nLogin){
             echo "<p>Datos actualizados con éxito</p>";
             $_SESSION['xlog'] = $nLogin;
-
         }
         else{
-            echo "<h3>Éxito:</h3>";
             echo "<p>Datos actualizados con éxito</p>";
         }
     }
