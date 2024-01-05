@@ -33,11 +33,11 @@
 
     
     #formimg{
-            max-width: 250px;
+            max-width: 200px;
             margin: 0 auto;
             padding: 0px;
             /* background-color: #162938; */
-            border: 2px solid #162938;
+            /* border: 2px solid #162938; */
         }
 
 
@@ -99,7 +99,7 @@
                             <br>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="formimg">
                             <div class="form-group">
                                 <label for="imagen">Seleccionar nueva imagen:</label>
                             </div>
