@@ -3,7 +3,7 @@ function handleImageUpload() {
     const previewImage = document.getElementById('profile-image-preview');
     const imageUrlInput = document.getElementById('image-url');
 
-    //const apiKey = '2d9c46c0e2fbf94e0d6442adcd8e577e';
+    const apiKey = '2d9c46c0e2fbf94e0d6442adcd8e577e';
 
     fileInput.addEventListener('change', function() {
         const formData = new FormData();
