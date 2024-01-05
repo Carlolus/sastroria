@@ -30,6 +30,29 @@
             margin-top: 10px; 
         }
     }
+
+    
+    #formimg{
+            max-width: 250px;
+            margin: 0 auto;
+            padding: 0px;
+            /* background-color: #162938; */
+            border: 2px solid #162938;
+        }
+
+
+    img{
+            /* margin-left: 70px; */
+            /* justify-content: center;
+            align-items: center; */
+            height: 10px;
+            width: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #dfdfdf;
+            border: 2px solid #162938;
+        }
+        
     </style>
     
     <div class="container mt-5">
