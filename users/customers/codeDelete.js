@@ -30,6 +30,5 @@ btn1.addEventListener("submit", function(evt){
         })
         myModal.show()
     })
-    .catch(err => alert(err))
     location.reload();
 })
