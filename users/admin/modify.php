@@ -99,7 +99,7 @@
                             <br>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 justify-content-center align-items-center">
                             <div class="form-group">
                                 <label for="imagen">Seleccionar nueva imagen:</label>
                             </div>
