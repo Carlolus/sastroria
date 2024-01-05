@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <?php include('../../resources/header.php');?>
-    <link rel="stylesheet" href="/sAstroria/css/userlist.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -11,7 +10,9 @@
         <div class="row">
             <div class="col-12 mb-3 mb-lg-5">
                 <div class="overflow-hidden card table-nowrap table-card">
+                    <br>
                     <div class="card-header d-flex justify-content-between align-items-center">
+                        <br>
                         <h5 class="mb-0">Listado de clientes</h5>
                         <a href="create_customer.php" class="btn btn-light btn-sm">Añadir Cliente</a>
                     </div>
@@ -55,9 +56,9 @@
                                                                 <i class="fa fa-bars" aria-hidden="true"></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-end" >
-                                                                <a href="#!" class="dropdown-item">Ver información.</a>
-                                                                <a href="#!" class="dropdown-item">Editar información.</a>
-                                                                <a href="#!" class="dropdown-item">Eliminar Cliente</a>
+                                                                <a href="view_info.php?id=$arr[0]" class="dropdown-item">Ver información</a>
+                                                                <a href="modify_customer.php?id=$arr[0]" class="dropdown-item">Editar</a>
+                                                                <a href="#" onclick = "confirmDelete({$arr[0]},'$arr[1]')" class="dropdown-item">Eliminar Cliente</a>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -78,8 +79,30 @@
         </div>
     </div>
 
+    <div class="modal" tabindex="-1" id = "modalConfirm">
+        <div class="modal-dialog">
+            <form action = "delete_customer.php" id = "fromConf">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirmación</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <input type="hidden" name="customer_id" id = customer_id>
+                    </div>
+                    <div class="modal-body" id = "bodyModalConfirm">
+                        <p>Está seguro de que desea eliminar al cliente.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
+                        <button type="button" class="btn btn-primary">Si, continuar</button>
+                    </div>
+                </div>
+            </form>    
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    </body>  
+    </body>
+    <script src="codeDelete.js"></script>
 </body>
 </html>

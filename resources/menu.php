@@ -27,15 +27,7 @@
                     <a class="nav-link" href="#">Link</a>
                 </li> -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Clientes
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?php echo $url; ?>users/customers/list_customers.php">Listar</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Eliminar</a></li>
-                    </ul>
-                    
+                    <a class="nav-link active" aria-current="page" href="<?php echo $url; ?>users/customers/list_customers.php">Clientes</a>                  
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
