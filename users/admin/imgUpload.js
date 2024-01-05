@@ -16,10 +16,7 @@ function handleImageUpload() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            // Actualizar la URL de la imagen en la vista
             previewImage.src = data.data.url;
-
-            // Almacenar la URL en un campo oculto del formulario
             imageUrlInput.value = data.data.url;
         })
         .catch(error => console.error('Error al subir la imagen:', error));
@@ -27,11 +24,7 @@ function handleImageUpload() {
 }
 
 function initialize() {
-    // Otras configuraciones iniciales si es necesario
-
-    // Configura el manejo de la carga de imágenes
     handleImageUpload();
 }
 
-// Llama a la función de inicialización cuando se carga la página
 document.addEventListener('DOMContentLoaded', initialize);
