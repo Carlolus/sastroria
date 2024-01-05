@@ -11,10 +11,8 @@
         $result = mysqli_query($db, $sql);
 
         if (!$result) {
-            echo "<h3>Error:</h3>";
             echo "<p>Contraseña incorrecta</p>";
         } else {
-            echo "<h3>Éxito:</h3>";
             echo "<p>Contraseña actualizada con éxito</p>";
         }
         mysqli_close($db);
