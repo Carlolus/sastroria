@@ -27,7 +27,7 @@
                     <a class="nav-link" href="#">Link</a>
                 </li> -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link active" aria-current="page" href="<?php echo $url; ?>users/customers/list_customers.php">Clientes</a>                  
+                    <a class="nav-link" aria-current="page" href="<?php echo $url; ?>users/customers/list_customers.php">Clientes</a>                  
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

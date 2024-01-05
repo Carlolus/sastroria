@@ -10,3 +10,26 @@ function confirmDelete(id, name){
     hiddenCamp.value = id;
     bodyModalConfirm.innerHTML = "<p>¿Está seguro de que desea eliminar al cliente   " + name + " ?</p>";
 }
+
+const btn1 = document.getElementById("frmConf")
+btn1.addEventListener("submit", function(evt){
+    
+    evt.preventDefault();
+    let div1 = document.getElementById("modalConfirm")
+
+    //llamado asincrono
+    fetch("delete_customer.php",{
+        method: 'post',
+        body: new FormData(frmConf)
+    })
+    .then(response => response.text())
+    .then(data => {
+        div1.innerHTML = data;
+        const myModal = new bootstrap.Modal('#Modal1', {
+            keyboard: false
+        })
+        myModal.show()
+    })
+    .catch(err => alert(err))
+    location.reload();
+})

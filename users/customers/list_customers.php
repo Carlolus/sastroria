@@ -31,7 +31,7 @@
                             <tbody>
                                 <?php
                                     $db = conectar();
-                                    $sql = "SELECT id, name, phone, adress, mail FROM customers ORDER BY name";
+                                    $sql = "SELECT id, name, phone, adress, mail FROM customers WHERE state = 'v' ORDER BY name";
                                     $result = mysqli_query($db, $sql);
                                     $n = mysqli_num_rows($result);
                                     if($n > 0){
@@ -81,7 +81,7 @@
 
     <div class="modal" tabindex="-1" id = "modalConfirm">
         <div class="modal-dialog">
-            <form action = "delete_customer.php" id = "fromConf">
+            <form action = "delete_customer.php" id = "frmConf" method = "post">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Confirmación</h5>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
-                        <button type="button" class="btn btn-primary">Si, continuar</button>
+                        <input type="submit" class="btn btn-primary" value = "Si, continuar">
                     </div>
                 </div>
             </form>    

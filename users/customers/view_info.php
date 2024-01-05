@@ -33,7 +33,7 @@
             padding: 1.5rem 1.5rem;
         }
     </style>
-    
+    <br>
     <div class="container-fluid">
 
         <?php 
