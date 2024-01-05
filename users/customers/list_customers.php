@@ -64,7 +64,7 @@
                                                 </tr>
                                             HTML; 
                                         }
-                                        mysqli_close($bd);
+                                        mysqli_close($db);
                                     }
                                     else{
                                         echo '<tr><td colspan="6">No hay clientes registrados</td></tr>';
