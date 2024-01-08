@@ -59,7 +59,6 @@
                                                                 </a>
                                                                 <div class="dropdown-menu dropdown-menu-end" >
                                                                     <button type="submit" class = "dropdown-item" name="submitView">Ver información</button>
-                                                                    <!-- <a href="view_info.php?id=$arr[0]" class="dropdown-item">Ver información</a> -->
                                                                     <button type="submit" class = "dropdown-item" name="submitModificar">Actualizar información</button>
                                                                     <a href="#" onclick = "confirmDelete({$arr[0]},'$arr[1]')" class="dropdown-item">Eliminar Cliente</a>
                                                                 </div>
