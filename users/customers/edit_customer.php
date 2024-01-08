@@ -33,58 +33,22 @@
             padding: 1.5rem 1.5rem;
         }
     </style>
-    <br>
-    <div class="container-fluid">
-
-        <?php 
-            // Información básica
-            $db = conectar();
-            $id = $_SESSION['current_id'];
-            $sql = "SELECT * FROM customers WHERE id = $id"; 
-            $result = mysqli_query($db, $sql);
-            $arr = mysqli_fetch_array($result);
-            $name = $arr[1];
-            $phone = $arr[2];
-            $adress = $arr[3];
-            $email= $arr[4];
-            
-            // Medidas pantalón
-            $sql = "SELECT * FROM trouser_measures WHERE customer = $id";
-            $result = mysqli_query($db, $sql);
-            $arr = mysqli_fetch_array($result);
-
-            $largoP = $arr[1] ?? '';
-            $tiroP = $arr[2] ?? '';
-            $cinturaP = $arr[3] ?? '';
-            $baseP = $arr[4] ?? '';
-            $piernaP = $arr[5] ?? '';
-            $rodillaP = $arr[6] ?? '';
-            $botaP = $arr[7] ?? '';
-
-            // Medidas Saco
-            $sql = "SELECT * FROM coat_measures WHERE customer = $id";
-            $result = mysqli_query($db, $sql);
-            $arr = mysqli_fetch_array($result);
-
-            $largoS = $arr[1] ?? '';
-            $talleS = $arr[2] ?? '';
-            $espaldaS = $arr[3] ?? '';
-            $hombroS = $arr[4] ?? '';
-            $pechoS = $arr[5] ?? '';
-            $mangaS = $arr[6] ?? '';
-
-            // Medidas Chaleco
-            $sql = "SELECT * FROM vest_measures WHERE customer = $id";
-            $result = mysqli_query($db, $sql);
-            $arr = mysqli_fetch_array($result);
-
-            $largoV = $arr[1] ?? '';
-            $talleV = $arr[2] ?? '';
-            $pechoV = $arr[3] ?? '';
-
-            echo 
-            <<< HTML
+    
+    <form action="edit_customer2.php" id = "frmEditCustomer" method = "post">
+        <h4>Edición de información</h4>
+        <div class="container-fluid">
             <div class="container">
+                <!-- Title -->
+                <div class="d-flex justify-content-between align-items-lg-center py-3 flex-column flex-lg-row">
+                    <h2 class="h5 mb-3 mb-lg-0"><a href="../../pages/admin/customers.html" class="text-muted">
+                        <i class="bi bi-arrow-left-square me-2"></i></a>Añadir nuevo cliente</h2>
+                    <div class="hstack gap-3">
+                        <button class="btn btn-light btn-sm btn-icon-text"><i class="bi bi-x"></i> <span
+                                class="text">Cancelar</span></button>
+                        <button class="btn btn-dark btn-sm btn-icon-text" type="submit"><i class="bi bi-save"></i> <span class="text">Guardar</span></button>
+                    </div>
+                </div>
+
                 <!-- Main content -->
                 <div class="row">
                     <!-- Left side -->
@@ -97,13 +61,13 @@
                                     <div class="col-lg-6">
                                         <div class="mb-3">
                                             <label class="form-label">Cédula</label>
-                                            <input id="txtId" name="txtId" type="number" class="form-control" min="1" readonly value="$id">
+                                            <input id = "txtId" name = "txtId" type="number" class="form-control" min = "1" required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="mb-3">
                                             <label class="form-label">Nombre</label>
-                                            <input id="txtName" name="txtName" type="text" class="form-control" readonly value="$name">
+                                            <input id = "txtName" name = "txtName" type="text" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -111,59 +75,59 @@
                                     <div class="col-lg-6">
                                         <div class="mb-3">
                                             <label class="form-label">Teléfono</label>
-                                            <input id="txtPhone" name="txtPhone" type="text" class="form-control" readonly value="$phone">
+                                            <input id = "txtPhone" name = "txtPhone" type="text" class="form-control" required min = "0">
                                         </div>
                                     </div>
                                     <div class="col-lg-6"> 
                                         <div class="mb-3">
                                             <label class="form-label">Dirección</label>
-                                            <input id="txtAdress" name="txtAdress" type="text" class="form-control" readonly value="$adress">
+                                            <input id = "txtAdress" name = "txtAdress" type="text" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="mb-3">
                                         <label class="form-label">Correo Electrónico:</label>
-                                        <input id="txtEmail" name="txtEmail" type="email" class="form-control" readonly value="$email">
+                                        <input id = "txtEmail" name = "txtEmail" type="email" class="form-control">
                                     </div>
                                 </div>
+
                             </div>
                         </div>
-
-
+                        <!-- Address -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6 mb-4">Medidas pantalón</h3>
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <label class="form-label">Largo</label>
-                                        <input id="txtLargoP" name="txtLargoP" type="number" class="form-control" min="0" max="999" readonly value="$largoP">
+                                        <input id="txtLargoP" name="txtLargoP" type="number" class="form-control" min="0" max="999">
                                     </div>
                                     <div class="col-lg-3">
                                         <label class="form-label">Tiro</label>
-                                        <input id="txtTiroP" name="txtTiroP" type="number" class="form-control" min="0" max="999" readonly value="$tiroP">
+                                        <input id="txtTiroP" name="txtTiroP" type="number" class="form-control" min="0" max="999">
                                     </div>
                                     <div class="col-lg-3">
                                         <label class="form-label">Cintura</label>
-                                        <input id="txtCinturaP" name="txtCinturaP" type="number" class="form-control" min="0" max="999" readonly value="$cinturaP">
+                                        <input id="txtCinturaP" name="txtCinturaP" type="number" class="form-control" min="0" max="999">
                                     </div>
                                     <div class="col-lg-3">
                                         <label class="form-label">Base</label>
-                                        <input id="txtBaseP" name="txtBaseP" type="number" class="form-control" min="0" max="999" readonly value="$baseP">
+                                        <input id="txtBaseP" name="txtBaseP" type="number" class="form-control" min="0" max="999">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <label class="form-label">Pierna</label>
-                                        <input id="txtPiernaP" name="txtPiernaP" type="number" class="form-control" min="0" max="999" readonly value="$piernaP">
+                                        <input id="txtPiernaP" name="txtPiernaP" type="number" class="form-control" min="0" max="999">
                                     </div>
                                     <div class="col-lg-3">
                                         <label class="form-label">Rodilla</label>
-                                        <input id="txtRodillaP" name="txtRodillaP" type="number" class="form-control" min="0" max="999" readonly value="$rodillaP">
+                                        <input id="txtRodillaP" name="txtRodillaP" type="number" class="form-control" min="0" max="999">
                                     </div>
                                     <div class="col-lg-3">
                                         <label class="form-label">Bota</label>
-                                        <input id="txtBotaP" name="txtBotaP" type="number" class="form-control" min="0" max="999" readonly value="$botaP">
+                                        <input id="txtBotaP" name="txtBotaP" type="number" class="form-control" min="0" max="999">
                                     </div>
                                 </div>
                             </div>
@@ -173,15 +137,15 @@
                     <div class="col-lg-4">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h3 class="h6">Medidas Chaleco</h3>
+                                <h3 class="h6">Medidas chaleco</h3>
                                 <label class="form-label">Largo</label>
-                                <input id="txtLargoV" name="txtLargoV" type="number" class="form-control" min="0" max="999" readonly value="$largoV">
+                                <input id="txtLargoV" name="txtLargoV" type="number" class="form-control" min="0" max="999">
                                 <br>
                                 <label class="form-label">Talle</label>
-                                <input id="txtTalleV" name="txtTalleV" type="number" class="form-control" min="0" max="999" readonly value="$talleV">
+                                <input id="txtTalleV" name="txtTalleV" type="number" class="form-control" min="0" max="999">
                                 <br>
                                 <label class="form-label">Pecho</label>
-                                <input id="txtPechoV" name="txtPechoV" type="number" class="form-control" min="0" max="999" readonly value="$pechoV">
+                                <input id="txtPechoV" name="txtPechoV" type="number" class="form-control" min="0" max="999">
                             </div>
                         </div>
 
@@ -192,31 +156,31 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">Largo</label>
-                                        <input id="txtLargoS" name="txtLargoS" type="number" class="form-control" min="0" max="999" readonly value="$largoS">
+                                        <input id="txtLargoS" name="txtLargoS" type="number" class="form-control" min="0" max="999">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">Talle</label>
-                                        <input id="txtTalleS" name="txtTalleS" type="number" class="form-control" min="0" max="999" readonly value="$talleS">
+                                        <input id="txtTalleS" name="txtTalleS" type="number" class="form-control" min="0" max="999">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">Espalda</label>
-                                        <input id="txtEspaldaS" name="txtEspaldaS" type="number" class="form-control" min="0" max="999" readonly value="$espaldaS">
+                                        <input id="txtEspaldaS" name="txtEspaldaS" type="number" class="form-control" min="0" max="999">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">Hombro</label>
-                                        <input id="txtHombroS" name="txtHombroS" type="number" class="form-control" min="0" max="999" readonly value="$hombroS">
+                                        <input id="txtHombroS" name="txtHombroS" type="number" class="form-control" min="0" max="999">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">Pecho</label>
-                                        <input id="txtPechoS" name="txtPechoS" type="number" class="form-control" min="0" max="999" readonly value="$pechoS">
+                                        <input id="txtPechoS" name="txtPechoS" type="number" class="form-control" min="0" max="999">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">Manga</label>
-                                        <input id="txtMangaS" name="txtMangaS" type="number" class="form-control" min="0" max="999" readonly value="$mangaS">
+                                        <input id="txtMangaS" name="txtMangaS" type="number" class="form-control" min="0" max="999">
                                     </div>
                                 </div>
                             </div>
@@ -224,12 +188,9 @@
                     </div>
                 </div>
             </div>
-
-            HTML; 
-            mysqli_close($db);
-
-        ?>
-    </div>
+        </div>
+    </form> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src = "codeAdd.js"></script>
 </body>

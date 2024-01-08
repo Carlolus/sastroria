@@ -29,51 +29,55 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                    $db = conectar();
-                                    $sql = "SELECT id, name, phone, adress, mail FROM customers WHERE state = 'v' ORDER BY name";
-                                    $result = mysqli_query($db, $sql);
-                                    $n = mysqli_num_rows($result);
-                                    if($n > 0){
-                                        while ($arr=mysqli_fetch_array($result)) {
-                                            echo 
-                                            <<< HTML
-                                                <tr class="align-middle">
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div>
-                                                                <div class="h6 mb-0 lh-1">$arr[0]</div>
+                                <form action="process.php" method = "POST">
+                                    
+                                    <?php
+                                        $db = conectar();
+                                        $sql = "SELECT id, name, phone, adress, mail FROM customers WHERE state = 'v' ORDER BY name";
+                                        $result = mysqli_query($db, $sql);
+                                        $n = mysqli_num_rows($result);
+                                        if($n > 0){
+                                            while ($arr=mysqli_fetch_array($result)) {
+                                                echo 
+                                                <<< HTML
+                                                    <tr class="align-middle">
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div>
+                                                                    <div class="h6 mb-0 lh-1">$arr[0]</div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>$arr[1]</td>
-                                                    <td><span class="d-inline-block align-middle">$arr[2]</span></td>
-                                                    <td><span>$arr[3]</span></td>
-                                                    <td>$arr[4]</td>
-                                                    <td class="text-end">
-                                                        <div class="drodown">
-                                                            <a data-bs-toggle="dropdown" href="#" class="btn p-1 dropdown-trigger" aria-expanded="false" data-id="$arr[0]">
-                                                                <i class="fa fa-bars" aria-hidden="true"></i>
-                                                            </a>
-                                                            <div class="dropdown-menu dropdown-menu-end" >
-                                                                <a href="view_info.php?id=$arr[0]" class="dropdown-item">Ver información</a>
-                                                                <a href="modify_customer.php?id=$arr[0]" class="dropdown-item">Editar</a>
-                                                                <a href="#" onclick = "confirmDelete({$arr[0]},'$arr[1]')" class="dropdown-item">Eliminar Cliente</a>
+                                                        </td>
+                                                        <td>$arr[1]</td>
+                                                        <td><span class="d-inline-block align-middle">$arr[2]</span></td>
+                                                        <td><span>$arr[3]</span></td>
+                                                        <td>$arr[4]</td>
+                                                        <td class="text-end">
+                                                            <div class="drodown">
+                                                                <a data-bs-toggle="dropdown" href="#" class="btn p-1 dropdown-trigger" aria-expanded="false" data-id="$arr[0]">
+                                                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-end" >
+                                                                    <button type="submit" class = "dropdown-item" name="submitView">Ver información</button>
+                                                                    <!-- <a href="view_info.php?id=$arr[0]" class="dropdown-item">Ver información</a> -->
+                                                                    <a href="edit_customer.php?id=$arr[0]" class="dropdown-item">Editar</a>
+                                                                    <a href="#" onclick = "confirmDelete({$arr[0]},'$arr[1]')" class="dropdown-item">Eliminar Cliente</a>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            HTML; 
+                                                        </td>
+                                                    </tr>
+                                                HTML; 
+                                            }
+                                            mysqli_close($db);
                                         }
-                                        mysqli_close($db);
-                                    }
-                                    else{
-                                        echo '<tr><td colspan="6">No hay clientes registrados</td></tr>';
-                                    }                               
-                                ?>
+                                        else{
+                                            echo '<tr><td colspan="6">No hay clientes registrados</td></tr>';
+                                        }                               
+                                    ?>
+                                    <input type="hidden" name="obj" id = "obj">
+                                </form>    
                             </tbody>
-                        </table>
-                        <input type="hidden" name="obj" id = "obj">
+                        </table>                    
                     </div>
                 </div>
             </div>
@@ -104,7 +108,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     </body>
-    <script src="codeDelete.js"></script>
     <script src="genCode.js"></script>
+    <script src="codeDelete.js"></script>
+    
 </body>
 </html>
