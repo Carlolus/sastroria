@@ -52,7 +52,7 @@
                                                     <td>$arr[4]</td>
                                                     <td class="text-end">
                                                         <div class="drodown">
-                                                            <a data-bs-toggle="dropdown" href="#" class="btn p-1" aria-expanded="false">
+                                                            <a data-bs-toggle="dropdown" href="#" class="btn p-1 dropdown-trigger" aria-expanded="false" data-id="$arr[0]">
                                                                 <i class="fa fa-bars" aria-hidden="true"></i>
                                                             </a>
                                                             <div class="dropdown-menu dropdown-menu-end" >
@@ -73,6 +73,7 @@
                                 ?>
                             </tbody>
                         </table>
+                        <input type="hidden" name="obj" id = "obj">
                     </div>
                 </div>
             </div>
@@ -104,5 +105,6 @@
         crossorigin="anonymous"></script>
     </body>
     <script src="codeDelete.js"></script>
+    <script src="genCode.js"></script>
 </body>
 </html>
