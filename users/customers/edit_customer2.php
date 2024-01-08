@@ -50,7 +50,7 @@
         $sql = "UPDATE vest_measures SET largo = '$largoV', talle = '$talleV', pecho = '$pechoV' WHERE customer = '$newId'";
         $result = mysqli_query($db, $sql);
 
-        echo "$name y su información registrados de manera exitosa.";
+        echo "$name y su información actualizados de manera exitosa.";
     }
     mysqli_close($db);
 ?>

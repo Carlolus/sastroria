@@ -37,6 +37,7 @@
                         <li><a class="dropdown-item" href="#">Alquiler</a></li>
                         <li><a class="dropdown-item" href="#">Confecciónes</a></li>
                         <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>services/suits/add_suit.php">Agregar traje</a></li>
                         <li><a class="dropdown-item" href="#">Ayuda</a></li>
                     </ul>
                     
