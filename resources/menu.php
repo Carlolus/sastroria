@@ -31,13 +31,28 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Servicios
+                        Alquiler
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Alquiler</a></li>
-                        <li><a class="dropdown-item" href="#">Confecciónes</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>services/rentals/create_rental.php">Alquiler</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>services/rentals/list_rentals.php">Administrar alquileres</a></li> 
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="<?php echo $url; ?>services/suits/add_suit.php">Agregar traje</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>services/suits/list_suits.php">Listar trajes</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Ayuda</a></li>
+                        
+                    </ul>
+                    
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Confecciones
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Nueva Confección</a></li>
+                        <li><a class="dropdown-item" href="#">Administrar Confecciones</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Ayuda</a></li>
                     </ul>
                     

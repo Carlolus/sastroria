@@ -5,6 +5,7 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            background:#eee;
         }
 
         #formimg {
