@@ -6,7 +6,7 @@
         header("Location: view_info.php");
         exit();
     } elseif (isset($_POST["submitModificar"])) {
-        header("Location: otra_pagina_modificar.php");
+        header("Location: edit_customer.php");
         exit();
     }
 ?>

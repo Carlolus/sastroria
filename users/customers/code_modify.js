@@ -1,7 +1,6 @@
-const btn1 = document.getElementById("frmAddCustomer")
+const btn2 = document.getElementById("frmModifyCustomer")
 
-
-btn1.addEventListener("submit", function(evt){
+btn2.addEventListener("submit", function(evt){
     
     evt.preventDefault();
 
@@ -9,9 +8,9 @@ btn1.addEventListener("submit", function(evt){
 
     //llamado asincrono
 
-    fetch("add_customer.php",{
+    fetch("edit_customer2.php",{
         method: 'post',
-        body: new FormData(frmAddCustomer)
+        body: new FormData(frmModifyCustomer)
     })
     .then(response => response.text())
     .then(data => {
@@ -23,4 +22,3 @@ btn1.addEventListener("submit", function(evt){
     })
     .catch(err => alert(err))
 })
-

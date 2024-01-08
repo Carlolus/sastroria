@@ -42,8 +42,10 @@
                     <h2 class="h5 mb-3 mb-lg-0"><a href="../../pages/admin/customers.html" class="text-muted">
                         <i class="bi bi-arrow-left-square me-2"></i></a>Añadir nuevo cliente</h2>
                     <div class="hstack gap-3">
-                        <button class="btn btn-light btn-sm btn-icon-text"><i class="bi bi-x"></i> <span
-                                class="text">Cancelar</span></button>
+                        <a href="list_customers.php" class="btn btn-light btn-sm btn-icon-text">
+                            <i class="bi bi-x"></i>
+                            <span class="text">Cancelar</span>
+                        </a>                 
                         <button class="btn btn-dark btn-sm btn-icon-text" type="submit"><i class="bi bi-save"></i> <span class="text">Guardar</span></button>
                     </div>
                 </div>
