@@ -34,19 +34,19 @@
         }
     </style>
     
-    <form action="add_customer.php" id = "frmAddCustomer" method = "post">
+    <form action="create_rental2.php" id = "frmCreateRental" method = "post">
         <div class="container-fluid">
             <div class="container">
                 <!-- Title -->
                 <div class="d-flex justify-content-between align-items-lg-center py-3 flex-column flex-lg-row">
                     <h2 class="h5 mb-3 mb-lg-0"><a href="../../pages/admin/customers.html" class="text-muted">
-                        <i class="bi bi-arrow-left-square me-2"></i></a>Añadir nuevo cliente</h2>
+                        <i class="bi bi-arrow-left-square me-2"></i></a>Nuevo alquiler</h2>
                     <div class="hstack gap-3">
-                        <a href="list_customers.php" class="btn btn-light btn-sm btn-icon-text">
+                        <a href="list_rentals.php" class="btn btn-light btn-sm btn-icon-text">
                             <i class="bi bi-x"></i>
                             <span class="text">Cancelar</span>
                         </a>                 
-                        <button class="btn btn-dark btn-sm btn-icon-text" type="submit"><i class="bi bi-save"></i> <span class="text">Guardar</span></button>
+                        <button id = "btnSave" class="btn btn-dark btn-sm btn-icon-text" type="submit"><i class="bi bi-save"></i> <span class="text">Guardar</span></button>
                     </div>
                 </div>
 
@@ -57,80 +57,88 @@
                         <!-- Basic information -->
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h3 class="h6 mb-4">Información Básica</h3>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Cédula</label>
-                                            <input id = "txtId" name = "txtId" type="number" class="form-control" min = "1" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Nombre</label>
-                                            <input id = "txtName" name = "txtName" type="text" class="form-control" required>
-                                        </div>
-                                    </div>
+                                <h3 class="h6 mb-4">Cliente</h3>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="searchInputClientes" placeholder="Buscar">
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="mb-3">
-                                            <label class="form-label">Teléfono</label>
-                                            <input id = "txtPhone" name = "txtPhone" type="text" class="form-control" required min = "0">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6"> 
-                                        <div class="mb-3">
-                                            <label class="form-label">Dirección</label>
-                                            <input id = "txtAdress" name = "txtAdress" type="text" class="form-control" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="mb-3">
-                                        <label class="form-label">Correo Electrónico:</label>
-                                        <input id = "txtEmail" name = "txtEmail" type="email" class="form-control">
-                                    </div>
-                                </div>
-
-                            </div>
+                                <table class="table mb-0">
+                                    <thead class="small text-uppercase bg-body text-muted">
+                                        <tr>
+                                            <th>Cédula</th>
+                                            <th>Nombre</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id = "tableBodyClientes">
+                                        <?php
+                                            $db = conectar();
+                                            $sql = "SELECT id, name FROM customers WHERE state = 'v'";
+                                            $result = mysqli_query($db, $sql);
+                                            $n = mysqli_num_rows($result);
+                                            if($n > 0){
+                                                while ($arr=mysqli_fetch_array($result)) {      
+                                                    echo 
+                                                    <<< HTML
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                $arr[0]
+                                                            </td>
+                                                            <td>$arr[1]</td>
+                                                            <td><input type='radio' name='selectedCustomer'value='$arr[0]'></td>
+                                                        </tr>
+                                                    HTML; 
+                                                }
+                                                mysqli_close($db);
+                                            }
+                                            else{
+                                                echo '<tr><td colspan="4">No hay clientes registrados</td></tr>';
+                                            }                               
+                                        ?>                         
+                                    </tbody>
+                                </table> 
+                            </div>         
                         </div>
                         <!-- Address -->
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h3 class="h6 mb-4">Medidas pantalón</h3>
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Largo</label>
-                                        <input id="txtLargoP" name="txtLargoP" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Tiro</label>
-                                        <input id="txtTiroP" name="txtTiroP" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Cintura</label>
-                                        <input id="txtCinturaP" name="txtCinturaP" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Base</label>
-                                        <input id="txtBaseP" name="txtBaseP" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Pierna</label>
-                                        <input id="txtPiernaP" name="txtPiernaP" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Rodilla</label>
-                                        <input id="txtRodillaP" name="txtRodillaP" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Bota</label>
-                                        <input id="txtBotaP" name="txtBotaP" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                </div>
+                                <h3 class="h4 mb-4">Seleccione el traje</h3>
+                                <table class="table mb-0">
+                                    <thead class="small text-uppercase bg-body text-muted">
+                                        <tr>
+                                            <th>Talla</th>
+                                            <th>Detalles</th>
+                                            <th>Imagen</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id = "tableBodyTrajes">
+                                        <?php
+                                            $db = conectar();
+                                            $sql = "SELECT id, size, details, img, state FROM suits WHERE state = 'a'";
+                                            $result = mysqli_query($db, $sql);
+                                            $n = mysqli_num_rows($result);
+                                            if($n > 0){
+                                                while ($arr=mysqli_fetch_array($result)) {      
+                                                    echo 
+                                                    <<< HTML
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                $arr[1]
+                                                            </td>
+                                                            <td>$arr[2]</td>
+                                                            <td><img src='$arr[3]' width='40'></td>
+                                                            <td><input type='radio' name='selectedSuit' value='$arr[0]'></td>
+                                                        </tr>
+                                                    HTML; 
+                                                }
+                                                mysqli_close($db);
+                                            }
+                                            else{
+                                                echo '<tr><td colspan="4">No hay trajes registrados</td></tr>';
+                                            }                               
+                                        ?>                         
+                                    </tbody>
+                                </table> 
                             </div>
                         </div>
                     </div>
@@ -138,50 +146,26 @@
                     <div class="col-lg-4">
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h3 class="h6">Medidas chaleco</h3>
-                                <label class="form-label">Largo</label>
-                                <input id="txtLargoV" name="txtLargoV" type="number" class="form-control" min="0" max="999">
+                                <h3 class="h6">Fecha máxima</h3>
+                                <input required type="date" class="form-control" id="fecha" name="date" min="<?php echo date('Y-m-d'); ?>">
                                 <br>
-                                <label class="form-label">Talle</label>
-                                <input id="txtTalleV" name="txtTalleV" type="number" class="form-control" min="0" max="999">
-                                <br>
-                                <label class="form-label">Pecho</label>
-                                <input id="txtPechoV" name="txtPechoV" type="number" class="form-control" min="0" max="999">
                             </div>
                         </div>
 
                         <!-- Medidas Saco -->
                         <div class="card mb-4">
                             <div class="card-body">
-                                <h3 class="h6">Medidas Saco</h3>
+                                <h3 class="h6">Pago</h3>
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Largo</label>
-                                        <input id="txtLargoS" name="txtLargoS" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Talle</label>
-                                        <input id="txtTalleS" name="txtTalleS" type="number" class="form-control" min="0" max="999">
+                                    <div class="col-lg-12">
+                                        <label class="form-label">Precio</label>
+                                        <input required id="txtPrice" name="txtPrice" type="number" class="form-control" min="0" max="10000000">
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Espalda</label>
-                                        <input id="txtEspaldaS" name="txtEspaldaS" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Hombro</label>
-                                        <input id="txtHombroS" name="txtHombroS" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Pecho</label>
-                                        <input id="txtPechoS" name="txtPechoS" type="number" class="form-control" min="0" max="999">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Manga</label>
-                                        <input id="txtMangaS" name="txtMangaS" type="number" class="form-control" min="0" max="999">
+                                    <div class="col-lg-12">
+                                        <label class="form-label">Abono inicial</label>
+                                        <input required id="txtInicialP" name="txtInitialP" type="number" class="form-control" min="0" max="10000000">
                                     </div>
                                 </div>
                             </div>
@@ -190,8 +174,9 @@
                 </div>
             </div>
         </div>
-    </form> 
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src = "codeAdd.js"></script>
+    <script src = "rentalCode.js"></script>
 </body>

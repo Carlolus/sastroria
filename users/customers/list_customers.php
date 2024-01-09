@@ -90,7 +90,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title">Confirmación</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <input type="hidden" name="customer_id" id = customer_id>
+                        <input type="hidden" name="customer_id" id = "customer_id">
                     </div>
                     <div class="modal-body" id = "bodyModalConfirm">
                         <p>Está seguro de que desea eliminar al cliente.</p>
