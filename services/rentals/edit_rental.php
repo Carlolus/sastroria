@@ -72,11 +72,12 @@
                                         <?php
                                             $db = conectar();
                                             $rental_id = $_SESSION['current_id_rental'];
-                                            
+                                            echo "<input type='hidden' name='rental_id' value = '$rental_id'>";
+
                                             $sql = "SELECT suits.id FROM suits JOIN rentals ON suits.id = rentals.id_suit WHERE rentals.id = '$rental_id'";
                                             $result = mysqli_query($db, $sql);
                                             $arr = mysqli_fetch_array($result);
-                                            $old_suit = $arr[0];
+                                            
 
 
                                             $sql = "SELECT suits.id, customers.id, price, initial_payment, loan_date, return_date 
@@ -87,13 +88,14 @@
                                             $arr=mysqli_fetch_array($result);
 
                                             $id_suit = $arr[0];
+                                            $old_suit = $id_suit;
                                             $id_customer = $arr[1];
                                             $price = $arr[2];
                                             $initialP = $arr[3];
                                             $loan_date = $arr[4];
                                             $return_date = $arr[5];
 
-
+                                            echo "<input type='hidden' name='old_suit' value = '$old_suit'>";
 
                                             $sql = "SELECT id, name FROM customers WHERE state = 'v'";
                                             $result = mysqli_query($db, $sql);
@@ -131,9 +133,8 @@
                                             else{
                                                 echo '<tr><td colspan="4">No hay clientes registrados</td></tr>';
                                             }                               
-                                        ?>                         
+                                        ?>                     
                                     </tbody>
-                                    <input type="hidden" name="old_suit" value = '$old_suit'>
                                 </table> 
                             </div>         
                         </div>
@@ -153,7 +154,7 @@
                                     <tbody id = "tableBodyTrajes">
                                         <?php
                                             $db = conectar();
-                                            $sql = "SELECT id, size, details, img, state FROM suits WHERE state = 'a' OR id = '$old_suit'";
+                                            $sql = "SELECT id, size, details, img, state FROM suits WHERE state = 'a' OR id = '$id_suit'";
                                             $result = mysqli_query($db, $sql);
                                             $n = mysqli_num_rows($result);
                                             if($n > 0){
@@ -235,4 +236,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src = "codeEdit.js"></script>
 </body>

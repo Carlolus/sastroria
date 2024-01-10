@@ -21,7 +21,13 @@
     else{
         $sql = "UPDATE suits SET state = 'n' WHERE id = '$suit'";
         $result = mysqli_query($db, $sql);
-        echo "Alquilado con éxito al cliente de cédula $customer.";
+
+        $sql = "SELECT name FROM customers WHERE id = '$customer'";
+        $result = mysqli_query($db, $sql);
+        $arr = mysqli_fetch_array($result);
+
+        
+        echo "Alquilado con éxito al cliente de nombre $arr[0].";
     }
     mysqli_close($db);
 ?>

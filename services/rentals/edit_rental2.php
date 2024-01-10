@@ -2,9 +2,8 @@
     include("../../resources/connect.php");
     $db = conectar();
 
-    $id = $_POST['id_rental'];
+    $id = $_POST['rental_id'];
     $old_suit = $_POST['old_suit'];
-
 
     $customer = $_POST['selectedCustomer'];
     $suit = $_POST['selectedSuit'];
@@ -21,16 +20,20 @@
         echo "Error al prestar.";
     }
     else{
+        $sql = "SELECT name FROM customers WHERE id = '$customer'";
+        $result = mysqli_query($db, $sql);
+        $arr = mysqli_fetch_array($result);
+
         if($old_suit != $suit){
             $sql = "UPDATE suits SET state = 'a' WHERE id = '$old_suit'";
             $result = mysqli_query($db, $sql);
 
             $sql = "UPDATE suits SET state = 'n' WHERE id = '$suit'";
             $result = mysqli_query($db, $sql);
-            echo "Alquilado con éxito al cliente de cédula $customer.";
+            echo "Préstamo del cliente $arr[0] actualizado con éxito.";
         }
         else{
-            echo "Alquilado con éxito al cliente de cédula $customer.";
+            echo "Préstamo del cliente $arr[0] actualizado con éxito.";
         }
        
     }
