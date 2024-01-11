@@ -50,8 +50,8 @@
                         Confecciones
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Nueva Confección</a></li>
-                        <li><a class="dropdown-item" href="#">Administrar Confecciones</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>services/confections/create_confection.php">Confección</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>services/confections/list_confections.php">Administrar Confecciones</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Ayuda</a></li>
                     </ul>
