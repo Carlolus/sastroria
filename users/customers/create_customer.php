@@ -6,7 +6,8 @@
 <body>
     <?php include('../../resources/menu.php'); ?>
     <style>     
-        body{
+        body {
+            font-family: 'Roboto', sans-serif;
             background:#eee;
         }
 
@@ -37,7 +38,6 @@
     <form action="add_customer.php" id = "frmAddCustomer" method = "post">
         <div class="container-fluid">
             <div class="container">
-                <!-- Title -->
                 <div class="d-flex justify-content-between align-items-lg-center py-3 flex-column flex-lg-row">
                     <h2 class="h5 mb-3 mb-lg-0"><a href="../../pages/admin/customers.html" class="text-muted">
                         <i class="bi bi-arrow-left-square me-2"></i></a>Añadir nuevo cliente</h2>
@@ -50,11 +50,8 @@
                     </div>
                 </div>
 
-                <!-- Main content -->
                 <div class="row">
-                    <!-- Left side -->
                     <div class="col-lg-8">
-                        <!-- Basic information -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6 mb-4">Información Básica</h3>
@@ -95,7 +92,6 @@
 
                             </div>
                         </div>
-                        <!-- Address -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6 mb-4">Medidas pantalón</h3>
@@ -150,7 +146,6 @@
                             </div>
                         </div>
 
-                        <!-- Medidas Saco -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6">Medidas Saco</h3>

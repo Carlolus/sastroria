@@ -15,8 +15,8 @@
         }
 
         #suit-image-preview {
-            max-width: 400px; /* Tamaño máximo deseado */
-            max-height: 200px; /* Tamaño máximo deseado */
+            max-width: 400px; 
+            max-height: 200px; 
             height: auto;
             width: 100%;
             border-radius: 8px;
@@ -86,24 +86,19 @@
     <form action="create_confection2.php" id = "frmCreateConfection" method = "post">
         <div class="container-fluid">
             <div class="container">
-                <!-- Title -->
                 <div class="d-flex justify-content-between align-items-lg-center py-3 flex-column flex-lg-row">
                     <h2 class="h5 mb-3 mb-lg-0"><a href="../../pages/admin/customers.html" class="text-muted">
                         <i class="bi bi-arrow-left-square me-2"></i></a>Nueva Confección</h2>
                     <div class="hstack gap-3">
-                        <a href="list_rentals.php" class="btn btn-light btn-sm btn-icon-text">
+                        <a href="list_confections.php" class="btn btn-light btn-sm btn-icon-text">
                             <i class="bi bi-x"></i>
                             <span class="text">Cancelar</span>
                         </a>                 
                         <button id = "btnSave" class="btn btn-dark btn-sm btn-icon-text" type="submit"><i class="bi bi-save"></i> <span class="text">Guardar</span></button>
                     </div>
                 </div>
-
-                <!-- Main content -->
                 <div class="row">
-                    <!-- Left side -->
                     <div class="col-lg-8">
-                        <!-- Basic information -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6 mb-4">Cliente</h3>
@@ -147,7 +142,6 @@
                                 </table> 
                             </div>         
                         </div>
-                        <!-- Address -->
 
                         <div class="card mb-4">
                             <div class="card-body">
@@ -232,6 +226,9 @@
                                     <select class="form-control" id="fabric_list" name = "fabric_list" >
                                         <option>Lino</option>
                                         <option>Paño</option>
+                                        <option>Poliéster</option>
+                                        <option>Pana</option>
+                                        <option>Dril</option>
                                 </select>     
                                 <br>
                                 <h3 class="h6">¿Provee la tela?</h3>
@@ -242,7 +239,12 @@
                                 <br>
                                 <label class="form-label">Cantidad (cm)</label>
                                 <input id="txtQuantity" name="txtQuantity" type="number" class="form-control" min="0" max="10000" required>
-                                
+                                <br>
+                                <label class="form-label">Precio Tela</label>
+                                <input id="txtFabricPrice" name="txtFabricPrice" type="number" class="form-control" min="0" max="10000000">
+
+                                <input type="hidden" id="precioTela" name="precioTela" value = "0">
+    
                                 
                             </div>
                         </div>
@@ -255,20 +257,25 @@
                             </div>
                         </div>
 
-                        <!-- Medidas Saco -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6">Pago</h3>
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <label class="form-label">Precio</label>
-                                        <input required id="txtPrice" name="txtPrice" type="number" class="form-control" min="0" max="10000000">
+                                        <label class="form-label">Precio Confección</label>
+                                        <input value = "0" required id="txtPrice" name="txtPrice" type="number" class="form-control" min="0" max="10000000">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label class="form-label">Abono inicial</label>
-                                        <input required id="txtInicialP" name="txtInitialP" type="number" class="form-control" min="0" max="10000000">
+                                        <input value = "0" required id="txtInicialP" name="txtInitialP" type="number" class="form-control" min="0" max="10000000">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <label class="form-label">Costo total</label>
+                                        <input value = "0" required id="txtCostoTotal" type="number" class="form-control" disabled>
                                     </div>
                                 </div>
                             </div>

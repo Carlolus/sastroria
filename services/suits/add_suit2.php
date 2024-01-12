@@ -11,9 +11,9 @@
     $sql = "INSERT INTO suits (size, details, img, state) VALUES ('$talla','$details','$image','$state')";
     $result = mysqli_query($db, $sql);
     if (!$result) {    
-        echo "<h3>Error al agregar el traje</h3>";  
+        echo "<h6>Error al agregar el traje</h6>";  
     } else {
-        echo "<h3> Traje agregado. </h3>";
+        echo "<h6> Traje agregado. </h6>";
     }
     mysqli_close($db);       
 ?>

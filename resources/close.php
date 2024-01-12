@@ -1,5 +1,5 @@
 <?php
     session_start();
-    session_destroy();  //hasta aqui existirian las variables xlogin
+    session_destroy();
     header("Location: ../index.php");
 ?>

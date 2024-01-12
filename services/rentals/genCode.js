@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Tu código JavaScript aquí
     const hiddenId = document.getElementById("obj");
     const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
 

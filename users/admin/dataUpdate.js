@@ -16,7 +16,6 @@ function ocultarModal() {
 function togglePassword(id) {
   const passwordInput = document.getElementById(id);
 
-  // Cambia entre 'password' y 'text'
   passwordInput.type = passwordInput.type === "password" ? "text" : "password";
 }
 
@@ -45,10 +44,8 @@ guardarButtonF.addEventListener("submit", function(evt) {
 
   let div1 = document.getElementById("divModal");
 
-  // Obtener los datos del formulario
-  const formData = new FormData(frmChangePass); // 'this' se refiere al formulario actual
+  const formData = new FormData(frmChangePass); 
 
-  // Llamado asincrónico con datos del formulario
   fetch("passwordChange.php", {
       method: 'post',
       body: formData,
@@ -70,10 +67,8 @@ actualizarDataB.addEventListener("submit", function(evt) {
   evt.preventDefault();
   let div1 = document.getElementById("divModal");
 
-  // Obtener los datos del formulario
-  const formData = new FormData(frmDataChange); // 'this' se refiere al formulario actual
+  const formData = new FormData(frmDataChange); 
 
-  // Llamado asincrónico con datos del formulario
   fetch("dataChange.php", {
       method: 'post',
       body: formData,

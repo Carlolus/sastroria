@@ -16,6 +16,13 @@
             max-width: 100px;
             max-height: 100px;
         }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background:#eee;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -66,7 +73,7 @@
                                                             </div>
                                                         </td>
                                                         <td><span>$arr[2]</span></td>
-                                                        <td><span class="d-inline-block align-middle"><img src="$arr[3]" alt="img_ref" width = "50"></span></td>
+                                                        <td><span class="d-inline-block align-middle"><img src="$arr[3]" alt="img_ref" width = "100"></span></td>
                                                         <td>$arr[4]</td>
                                                         <td>$arr[5]</td>
                                                         <td><span class="d-inline-block align-middle $claseEstado">$estado</span></td>
@@ -77,12 +84,18 @@
                                                                 </a>
                                                                 <div class="dropdown-menu dropdown-menu-end" >
                                                                     <button type="submit" class = "dropdown-item" name="submitView">Ver información</button>
+                                                                    <button type="submit" class = "dropdown-item" name="submitInvoice">Generar Factura</button>
                                                                     <a href="#" onclick = "confirmDelete({$arr[0]},'$arr[1]')" class="dropdown-item">Eliminar Confección</a>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                HTML; 
+                                                HTML;
+                                                if ($n === 1) {
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                }  
                                                 }
                                                 else{
                                                     echo 
@@ -114,13 +127,18 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                HTML; 
+                                                HTML;
+                                                if ($n === 1) {
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                }  
                                                 }
                                             }
                                             mysqli_close($db);
                                         }
                                         else{
-                                            echo '<tr><td colspan="6">No hay alquileres regisdtrados.</td></tr>';
+                                            echo '<tr><td colspan="6">No hay confecciones registradas.</td></tr>';
                                         }                               
                                     ?>
                                     <input type="hidden" name="obj" id = "obj">
@@ -147,7 +165,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
-                        <input type="submit" class="btn btn-primary" value = "Si, continuar">
+                        <input type="submit" class="btn btn-dark" value = "Si, continuar">
                     </div>
                 </div>
             </form>    
@@ -168,7 +186,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
-                        <input type="submit" class="btn btn-primary" value = "Si, continuar">
+                        <input type="submit" class="btn btn-dark" value = "Si, continuar">
                     </div>
                 </div>
             </form>    

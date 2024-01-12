@@ -7,8 +7,6 @@ btn1.addEventListener("submit", function(evt){
 
     let div1 = document.getElementById("divModal")
 
-    //llamado asincrono
-
     fetch("edit_rental2.php",{
         method: 'post',
         body: new FormData(frmEditRental)

@@ -57,7 +57,6 @@ btn1.addEventListener("submit", function(evt){
 
     let div1 = document.getElementById("divModal")
 
-    //llamado asincrono
 
     fetch("create_confection2.php",{
         method: 'post',

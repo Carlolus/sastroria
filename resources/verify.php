@@ -1,11 +1,11 @@
 <?php
-    session_start(); //acceso a las variables de sesion
+    session_start(); 
     include("connect.php");
     $db = conectar();
     $log = $_REQUEST["login"];
     $pass = $_REQUEST["password"];
 
-    $sql = "SELECT * FROM users WHERE login = '$log' and password = md5('$pass')"; // la funcion md5 encripa la clase
+    $sql = "SELECT * FROM users WHERE login = '$log' and password = md5('$pass')"; 
 
     $result = mysqli_query($db, $sql);
 

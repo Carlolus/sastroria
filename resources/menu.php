@@ -62,8 +62,7 @@
                         Reportes
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Generar Factura de pago</a></li>
-                        <li><a class="dropdown-item" href="#">Servicios pendientes</a></li>
+                        <li><a class="dropdown-item" href="<?php echo $url; ?>reports/pending_confections.php">Servicios pendientes</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Ayuda</a></li>
                     </ul>

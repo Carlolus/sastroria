@@ -6,7 +6,8 @@
 <body>
     <?php include('../../resources/menu.php'); ?>
     <style>     
-        body{
+        body {
+            font-family: 'Roboto', sans-serif;
             background:#eee;
         }
 
@@ -96,11 +97,8 @@
                             <button class="btn btn-dark btn-sm btn-icon-text" type="submit"><i class="bi bi-save"></i> <span class="text">Guardar cambios</span></button>
                         </div>
                     </div>
-                    <!-- Main content -->
                     <div class="row">
-                        <!-- Left side -->
                         <div class="col-lg-8">
-                            <!-- Basic information -->
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <h3 class="h6 mb-4">Información Básica</h3>
@@ -196,7 +194,6 @@
                                 </div>
                             </div>
 
-                            <!-- Medidas Saco -->
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <h3 class="h6">Medidas Saco</h3>

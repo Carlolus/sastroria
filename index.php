@@ -5,7 +5,6 @@
 </head>
 <body>
 
-<!--fondo login-->
 <style>
     body {
         font-family: 'Roboto', sans-serif;
@@ -28,10 +27,8 @@
                     <div class="info">
                         <div class="candidatos">
                             <div class="content">
-                                <span><ion-icon name="create-outline"></ion-icon>  Explora las funciones intuitivas de nuestro software para gestionar de manera eficiente tus usuarios y proyectos.</span> <br>
-                                <span><ion-icon name="accessibility-outline"></ion-icon>   Ajusta patrones y experimenta con estilos únicos. La confección nunca fue tan precisa y emocionante.</span><br>
+                                <span><ion-icon name="create-outline"></ion-icon>  Explora las funciones intuitivas de nuestro software para gestionar de manera eficiente tus usuarios y servicios.</span> <br>
                                 <span><ion-icon name="newspaper-outline"></ion-icon> Administra tus servicios de alquiler de manera eficiente con nuestra plataforma.</span>
-                                <!-- <span><ion-icon name="refresh-outline"></ion-icon>  Mantén actusadddddddddddddalizado tu CV</span> -->
                         </div>
                     </div>
                 </div>
@@ -54,7 +51,7 @@
                         </div>
                         <button type="submit" class="btn btn-dark btn-block">Iniciar Sesión</button>
                         <?php
-                            if (isset($_REQUEST["msg"])) {    //si existe algo, si esta asignado, si la variable esta creada o existe
+                            if (isset($_REQUEST["msg"])) {    
                                 $x = $_REQUEST["msg"];
                                 if ($x == 1) echo "<h4 class='text-danger'>Usuario no ENCONTRADO</h4>";
                                 else echo "<h4 class='text-danger'>Acceso no autorizado!!</h4>";
@@ -62,7 +59,7 @@
                         ?>
                     </form>
                     <br>
-                    <!-- <a href="#" class="mt-2 text-white">Crear cuenta</a> -->
+                    
                 </div>
             </div>
         </div>

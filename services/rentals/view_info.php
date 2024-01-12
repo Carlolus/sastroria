@@ -7,7 +7,8 @@
     <?php include('../../resources/menu.php');  
     ?>
     <style>     
-        body{
+        body {
+            font-family: 'Roboto', sans-serif;
             background:#eee;
         }
 
@@ -43,11 +44,8 @@
                         <i class="bi bi-arrow-left-square me-2"></i></a>Editar información</h2>
                 </div>
 
-                <!-- Main content -->
                 <div class="row">
-                    <!-- Left side -->
                     <div class="col-lg-8">
-                        <!-- Basic information -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6 mb-4">Cliente</h3>
@@ -101,7 +99,6 @@
                                 </table> 
                             </div>         
                         </div>
-                        <!-- Address -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h4 mb-4">Seleccione el traje</h3>

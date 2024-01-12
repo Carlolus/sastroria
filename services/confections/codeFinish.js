@@ -1,5 +1,4 @@
 
-// Your JavaScript code here
 let modalConfirmFin = document.getElementById("modalConfirmFin");
 let bodyModalConfirmFin = document.getElementById("bodyModalConfirmFin");
 let hiddenCampFin = document.getElementById("confection_id_fin");

@@ -29,14 +29,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const state = document.getElementById("hiddenProv");
+    const fabricPrice = document.getElementById("txtFabricPrice");
+    const costoTotal = document.getElementById("txtCostoTotal");
+    const txtPrice = document.getElementById("txtPrice");
+    const precioTelaHidden = document.getElementById("precioTela");
+    fabricPrice.disabled = false;
 
     document.getElementById('prov_fabric').addEventListener('change', function() {
         if(this.checked) {
             state.value = "y"
+            fabricPrice.disabled = true;
+            fabricPrice.value = "0";
+            precioTelaHidden.value = parseInt(fabricPrice.value);
+            costoTotal.value = parseInt(fabricPrice.value) + parseInt(txtPrice.value);
+            
         } else {
             state.value = "n"
+            precioTelaHidden.value = parseInt(fabricPrice.value);
+            fabricPrice.disabled = false;
+            fabricPrice.value = "0";
+            precioTelaHidden.value = parseInt(fabricPrice.value);
+            costoTotal.value = parseInt(fabricPrice.value) + parseInt(txtPrice.value);
         }
     });
 
+    document.getElementById('txtFabricPrice').addEventListener('input', function() {
+        precioTelaHidden.value = parseInt(fabricPrice.value);
+        costoTotal.value = parseInt(parseInt(fabricPrice.value) + parseInt(txtPrice.value));
+    });
+
+    document.getElementById('txtPrice').addEventListener('input', function() {
+        costoTotal.value = parseInt(fabricPrice.value) + parseInt(txtPrice.value);
+    });
     initialize();
 });

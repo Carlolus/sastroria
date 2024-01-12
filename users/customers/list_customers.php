@@ -6,6 +6,12 @@
 </head>
 <body>
     <?php include('../../resources/menu.php'); ?>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background:#eee;
+        }
+    </style>
     <div class="container">
         <div class="row">
             <div class="col-12 mb-3 mb-lg-5">
@@ -38,6 +44,15 @@
                                         $n = mysqli_num_rows($result);
                                         if($n > 0){
                                             while ($arr=mysqli_fetch_array($result)) {
+                                                
+                                                $sql = "SELECT customers.id FROM customers JOIN rentals ON customers.id = rentals.id_customer WHERE customers.id = '$arr[0]'";
+                                                $resultRentals = mysqli_query($db, $sql);
+                                                $nr = mysqli_num_rows($resultRentals);
+                                                
+                                                $sql = "SELECT customers.id FROM customers JOIN confections ON customers.id = confections.customer WHERE customers.id = '$arr[0]'";
+                                                $resultConfections = mysqli_query($db, $sql);
+                                                $nc = mysqli_num_rows($resultConfections);
+
                                                 echo 
                                                 <<< HTML
                                                     <tr class="align-middle">
@@ -60,7 +75,7 @@
                                                                 <div class="dropdown-menu dropdown-menu-end" >
                                                                     <button type="submit" class = "dropdown-item" name="submitView">Ver información</button>
                                                                     <button type="submit" class = "dropdown-item" name="submitModificar">Actualizar información</button>
-                                                                    <a href="#" onclick = "confirmDelete({$arr[0]},'$arr[1]')" class="dropdown-item">Eliminar Cliente</a>
+                                                                    <a href="#" onclick = "confirmDelete({$arr[0]},'$arr[1]','$nr','$nc')" class="dropdown-item">Eliminar Cliente</a>
                                                                 </div>
                                                             </div>
                                                         </td>
@@ -86,20 +101,10 @@
     <div class="modal" tabindex="-1" id = "modalConfirm">
         <div class="modal-dialog">
             <form action = "delete_customer.php" id = "frmConf" method = "post">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Confirmación</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <input type="hidden" name="customer_id" id = "customer_id">
-                    </div>
-                    <div class="modal-body" id = "bodyModalConfirm">
-                        <p>Está seguro de que desea eliminar al cliente.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
-                        <input type="submit" class="btn btn-primary" value = "Si, continuar">
-                    </div>
-                </div>
+                <input type="hidden" name="customer_id" id = "customer_id">
+                <div class="container" id = "containerFrm">
+                    
+                </div>                     
             </form>    
         </div>
     </div>
@@ -108,7 +113,7 @@
         crossorigin="anonymous"></script>
     </body>
     <script src="genCode.js"></script>
-    <script src="codeDelete.js"></script>
+    <script src="codeDeleteCustomer.js"></script>
     
 </body>
 </html>

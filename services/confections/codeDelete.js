@@ -17,7 +17,6 @@ btn1.addEventListener("submit", function(evt){
     evt.preventDefault();
     let div1 = document.getElementById("modalConfirm")
 
-    //llamado asincrono
     fetch("delete_confection.php",{
         method: 'post',
         body: new FormData(frmConf)

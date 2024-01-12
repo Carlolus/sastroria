@@ -9,4 +9,8 @@
         header("Location: edit_rental.php");
         exit();
     }
+    elseif(isset($_POST["submitInvoice"])) {
+        header("Location: rental_invoice.php");
+        exit();
+    }
 ?>

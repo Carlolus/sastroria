@@ -66,19 +66,16 @@
             <form action="add_suit2.php" method="post" id="frmAddSuit">
                 <div class="row">
                     <div class="col-md-6">
-                        <!-- Talla -->
                         <div class="form-group">
                             <label for="clave">Talla:</label>
                             <input type="number" class="form-control" name="txtsize" id="txtsize" required>
                         </div>
                         <br>
-                        <!-- Detalles -->
                         <div class="form-group">
                             <label for="nombre">Detalles:</label>
                             <input type="text" class="form-control" name="txtdetails" id="txtdetails" required>
                         </div>
                         <br>           
-                        <!-- Disponibilidad -->
                         <label class="form-check-label">Disponible</label>
                         <div class="form-check form-switch">
                             <input type="hidden" id="hiddenState" name="hiddenState" value = "a">
@@ -116,5 +113,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="imgUpload.js"></script>
+    <script src="codeAdd.js"></script>  
 </body>
 </html>

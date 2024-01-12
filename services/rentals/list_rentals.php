@@ -11,6 +11,11 @@
         .no-disponible {
             color: #dc3545; 
         }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background:#eee;
+        }
     </style>
 </head>
 <body>
@@ -72,12 +77,17 @@
                                                                 </a>
                                                                 <div class="dropdown-menu dropdown-menu-end" >
                                                                     <button type="submit" class = "dropdown-item" name="submitView">Ver información</button>
+                                                                    <button type="submit" class = "dropdown-item" name="submitInvoice">Generar Factura</button>
                                                                     <a href="#" onclick = "confirmDelete({$arr[0]},'$arr[1]')" class="dropdown-item">Eliminar Alquiler</a>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                HTML; 
+                                                    
+                                                HTML;
+                                                    if ($n === 1) {
+                                                        echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                    } 
                                                 }
                                                 else{
                                                     echo 
@@ -111,11 +121,16 @@
                                                     </tr>
                                                 HTML; 
                                                 }
+                                                if ($n === 1) {
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                    echo '<tr><td colspan="7">&nbsp;</td></tr>';
+                                                } 
                                             }
                                             mysqli_close($db);
                                         }
                                         else{
-                                            echo '<tr><td colspan="6">No hay alquileres regisdtrados.</td></tr>';
+                                            echo '<tr><td colspan="6">No hay alquileres registrados.</td></tr>';
                                         }                               
                                     ?>
                                     <input type="hidden" name="obj" id = "obj">
@@ -142,7 +157,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
-                        <input type="submit" class="btn btn-primary" value = "Si, continuar">
+                        <input type="submit" class="btn btn-dark" value = "Si, continuar">
                     </div>
                 </div>
             </form>    
@@ -163,7 +178,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, cancelar</button>
-                        <input type="submit" class="btn btn-primary" value = "Si, continuar">
+                        <input type="submit" class="btn btn-dark" value = "Si, continuar">
                     </div>
                 </div>
             </form>    

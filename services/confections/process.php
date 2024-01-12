@@ -6,7 +6,10 @@
         header("Location: view_info.php");
         exit();
     } elseif (isset($_POST["submitModificar"])) {
-        header("Location: edit_confection.php");
+        header("Location: edit_confection1.php");
+        exit();
+    } elseif(isset($_POST["submitInvoice"])) {
+        header("Location: confection_invoice.php");
         exit();
     }
 ?>

@@ -7,7 +7,8 @@
     <?php include('../../resources/menu.php');  
     ?>
     <style>     
-        body{
+        body {
+            font-family: 'Roboto', sans-serif;
             background:#eee;
         }
 
@@ -51,11 +52,8 @@
                     </div>
                 </div>
 
-                <!-- Main content -->
                 <div class="row">
-                    <!-- Left side -->
                     <div class="col-lg-8">
-                        <!-- Basic information -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6 mb-4">Cliente</h3>
@@ -103,6 +101,7 @@
                                             if($n > 0){
                                                 while ($arr=mysqli_fetch_array($result)) {
                                                     if($arr[0] == $id_customer){
+                                                        $cliente_actual = $arr[1];
                                                         echo 
                                                         <<< HTML
                                                             <tr class="align-middle">
@@ -135,7 +134,9 @@
                                             }                               
                                         ?>                     
                                     </tbody>
-                                </table> 
+                                </table>
+                                <h3 class="h6">Cliente actual</h3>
+                                <input name = "txtactual_customer" type="text" value = '<?php echo $cliente_actual?>' class = "form-control" disabled> 
                             </div>         
                         </div>
                         <!-- Address -->
@@ -210,7 +211,6 @@
                             </div>           
                         </div>
 
-                        <!-- Medidas Saco -->
                         <div class="card mb-4">
                             <div class="card-body">
                                 <h3 class="h6">Pago</h3>
